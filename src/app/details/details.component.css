@@ -1,0 +1,23 @@
+.details-container{
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 50vh;
+}
+
+.person{
+    display:flex;
+    flex-direction: column;
+}
+.info{
+    border-style: dotted;
+    display: flex;
+    gap: 5vh;
+}
+
+.address{
+    border-style: dotted;
+    display:flex;
+    flex-direction: column;
+    background-color: lightblue;
+}
