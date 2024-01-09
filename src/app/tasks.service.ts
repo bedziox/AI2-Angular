@@ -17,8 +17,9 @@ export class TasksService {
     const url = this.baseUrl + '/todos/';
     return this.http.get<Task[]>(url, {
       params: {
-      // archived: archived,
+      archived: archived,
       _sort: 'id',
+      _order: 'desc'
       }
     })
   }

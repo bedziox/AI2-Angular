@@ -1,5 +1,22 @@
 <div class="container">
-    <form class="new-task"></form>
+  <button type="button" class="btn btn-primary" (click)="archiveCompleted()" [disabled]="isProcessing">
+    Archive Completed
+  </button>
+    <form class="new-task">
+      <div id="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" class="form-control" [disabled]="isProcessing" [(ngModel)]="newTask.title" />
+      </div>
+      <div id="form-group">
+        <label for="deadline">Deadline</label>
+        <input type="date" name="title" id="deadline" class="form-control" [disabled]="isProcessing" [(ngModel)]="newTask.deadline" />
+      </div>
+      <div id="form-group">
+        <button type="button" class="btn btn-primary" (click)="addTask()" [disabled]="isProcessing">
+          {{isProcessing ? 'Processing' : 'Add Task'}}
+        </button>
+      </div>
+    </form>
   
     <div class="tasks">
       <div class="task" *ngFor="let task of tasks">
@@ -8,7 +25,7 @@
           <span *ngIf="task.deadline">{{ task.deadline }}</span>
         </div>
         <div class="actions">
-          <input type="checkbox" />
+          <input type="checkbox" [(ngModel)]="task.completed" (change)="handleChange(task)"/>
         </div>
       </div>
     </div>
