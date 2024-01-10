@@ -8,7 +8,6 @@
 }
 
 body {
-    background: url("https://placehold.co/100x100/FFFFFF/EFEFEF/png?text=49207");
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -38,3 +37,5 @@ footer{
     color: white;
     align-items: center;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
